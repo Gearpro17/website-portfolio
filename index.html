@@ -23,12 +23,7 @@
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
-    <div class="header-actions">
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-      </button>
+    <div class="header-actions"> 
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -102,16 +97,16 @@
 
       <div class="project-grid">
 
-        <article class="project-card">
-          <div class="project-thumb" role="img" aria-label="Screenshot of the Smart Inventory System dashboard">
+        <article class="project-card" data-github="https://github.com/Gearpro17/smart-inventory-system">
+          <button type="button" class="project-thumb" aria-label="View details for Smart Inventory System">
             <img src="assets/inventory_management_concept_art.png" alt="Screenshot of the Smart Inventory System dashboard" />
-          </div>
+          </button>
           <div class="project-body">
             <div class="project-top">
               <p class="project-category">Web application</p>
-              <a href="#" class="project-link" aria-label="Open project">
+              <button type="button" class="project-link" aria-label="View details for Smart Inventory System">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
+              </button>
             </div>
             <h3 class="project-title">Smart Inventory System</h3>
             <p class="project-desc">Full stack web application for inventory management with real-time tracking, analytics and reports.</p>
@@ -120,54 +115,98 @@
               <li>Angular</li>
               <li>MySQL</li>
             </ul>
+            <p class="project-desc-full" hidden>
+              Full stack web application built to help small warehouses manage stock levels without spreadsheets. 
+              The Angular front end gives staff a live view of inventory across multiple locations,
+              with low-stock alerts, category filtering and CSV exports. 
+              The Spring Boot backend exposes a REST API secured with JWT authentication, 
+              and MySQL stores stock movements so managers can generate historical reports and spot trends in demand over time.</p>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-thumb" role="img" aria-label="Screenshot of the Expense Tracker mobile app">
-            <span>App preview</span>
-          </div>
+        <article class="project-card" data-zip="assets/multi_state_control_project.zip">
+          <button type="button" class="project-thumb" aria-label="Screenshot of the state control simulation">
+            <img src="assets/Multiple_state_control.png" alt="Screenshot of the state control simulation" />
+          </button>
           <div class="project-body">
             <div class="project-top">
-              <p class="project-category">Mobile app</p>
-              <a href="#" class="project-link" aria-label="Open project">
+              <p class="project-category">CODESYS Simulation</p>
+              <button type="button" class="project-link" aria-label="View details for State Control Simulation">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
+              </button>
             </div>
-            <h3 class="project-title">Expense Tracker</h3>
-            <p class="project-desc">Android app to track daily expenses, set budgets and visualize spending habits.</p>
+            <h3 class="project-title">State Control Simulation</h3>
+            <p class="project-desc">Simulation of a process control system for a machine that goes through different states.</p>
             <ul class="project-tags">
-              <li>Kotlin</li>
-              <li>Room DB</li>
-              <li>MPAndroidChart</li>
+              <li>CODESYS</li>
+              <li>PLC Programming</li>
+              <li>Automation</li>
             </ul>
+            <p class="project-desc-full" hidden>
+              In this project I try to simulate a process control system for a machine that goes through different states.
+              I integrated a manual, automatic and home modes, as well as a start and stop function, as the default operation modes.
+              More can be added to the system, such as a reset function, a maintenance mode, and a fault detection system. The simulation is built in CODESYS using Structured Text (ST) 
+              and Sequential Function Chart (SFC) programming languages. It serves as a demonstrtation of a real-world industrial control system, and can be used to test and validate the control logic 
+              before deploying it to a physical machine.
+            </p>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-thumb" role="img" aria-label="Photo of the Autonomous Line Follower robot">
-            <span>Robot preview</span>
-          </div>
+        <article class="project-card" data-zip="assets/">
+          <button type="button" class="project-thumb" aria-label="Conveyor Belt Simulation">
+            <img src="assets/conveyor_belt.png" alt="Screenshot of the conveyor belt simulation" />
+          </button>
           <div class="project-body">
             <div class="project-top">
-              <p class="project-category">Robotics</p>
-              <a href="#" class="project-link" aria-label="Open project">
+              <p class="project-category">Robotics & Automation</p>
+              <button type="button" class="project-link" aria-label="View details for Conveyor Belt Simulation">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
+              </button>
             </div>
-            <h3 class="project-title">Autonomous Line Follower</h3>
-            <p class="project-desc">Autonomous robot capable of following a line, avoiding obstacles and collecting data.</p>
+            <h3 class="project-title">Conveyor Belt Simulation</h3>
+            <p class="project-desc">Simulation of a conveyor belt system with automated sorting and handling capabilities.</p>
             <ul class="project-tags">
-              <li>C++</li>
-              <li>Arduino</li>
-              <li>PID Control</li>
+              <li>CODESYS</li>
+              <li>PLC Programming</li>
+              <li>Automation</li>
             </ul>
+            <p class="project-desc-full" hidden>Simulation of a conveyor belt system with automated sorting and handling capabilities.
+              I designed and implemented a control system that can detect and sort objects based on their size, shape, and color.
+              It was programmed primarily in CODESYS using Structured Text (ST).
+            </p>
           </div>
         </article>
+
 
       </div>
     </div>
   </section>
+
+  <div class="modal-overlay" id="project-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-body">
+        <p class="modal-category" id="modal-category"></p>
+        <h3 class="modal-title" id="modal-title"></h3>
+        <p class="modal-desc" id="modal-desc"></p>
+        <ul class="modal-tags" id="modal-tags"></ul>
+        <div class="modal-actions">
+            <a class="btn btn-primary modal-download" id="modal-zip" download>
+              Download Project
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+            </a>
+            <a class="btn btn-primary modal-github" id="modal-github" target="_blank" rel="noopener">
+              View on GitHub
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 19 19 5M9 5h10v10"/></svg>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <section class="about" id="about">
     <div class="section-inner about-inner">

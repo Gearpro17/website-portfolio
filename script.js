@@ -45,18 +45,106 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', setActiveLink, { passive: true });
   setActiveLink();
 
-  // Theme toggle (light / dark mode) — toggles a class on <body>
-  const themeToggle = document.getElementById('theme-toggle');
-  const storedTheme = localStorage.getItem('theme');
 
-  if (storedTheme === 'light') {
-    document.body.classList.add('theme-light');
-  }
+  // Project detail modal
+  const modal = document.getElementById('project-modal');
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isLight = document.body.classList.toggle('theme-light');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  if (modal) {
+    const modalMedia = document.getElementById('modal-media');
+    const modalCategory = document.getElementById('modal-category');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalTags = document.getElementById('modal-tags');
+    const modalGithub = document.getElementById('modal-github');
+    const modalZip = document.getElementById('modal-zip');
+    const modalClose = document.getElementById('modal-close');
+
+    let lastFocusedElement = null;
+
+    const openModal = (card) => {
+      const thumb = card.querySelector('.project-thumb');
+      const thumbImg = thumb ? thumb.querySelector('img') : null;
+      const category = card.querySelector('.project-category');
+      const title = card.querySelector('.project-title');
+      const shortDesc = card.querySelector('.project-desc');
+      const fullDesc = card.querySelector('.project-desc-full');
+      const tags = card.querySelectorAll('.project-tags li');
+
+      // Media: reuse the card's image if it has one, otherwise leave blank
+      modalMedia.innerHTML = '';
+      if (thumbImg) {
+        const img = document.createElement('img');
+        img.src = thumbImg.src;
+        img.alt = title ? title.textContent : '';
+        modalMedia.appendChild(img);
+        modalMedia.hidden = false;
+      } else {
+        modalMedia.hidden = true;
+      }
+
+      modalCategory.textContent = category ? category.textContent : '';
+      modalTitle.textContent = title ? title.textContent : '';
+      modalDesc.textContent = fullDesc ? fullDesc.textContent : (shortDesc ? shortDesc.textContent : '');
+
+      modalTags.innerHTML = '';
+      tags.forEach(tag => {
+        const li = document.createElement('li');
+        li.textContent = tag.textContent;
+        modalTags.appendChild(li);
+      });
+
+      const githubUrl = card.dataset.github;
+      const zipUrl = card.dataset.zip;
+
+      if (githubUrl) {
+        modalGithub.href = githubUrl;
+        modalGithub.classList.remove('is-hidden');
+      } else {
+        modalGithub.classList.add('is-hidden');
+      }
+
+      if (zipUrl) {
+        modalZip.href = zipUrl;
+        modalZip.classList.remove('is-hidden');
+      } else {
+        modalZip.classList.add('is-hidden');
+      }
+
+      lastFocusedElement = document.activeElement;
+      modal.hidden = false;
+      modal.classList.add('is-open');
+      document.body.classList.add('modal-open');
+      modalClose.focus();
+    };
+
+    const closeModal = () => {
+      modal.classList.remove('is-open');
+      modal.hidden = true;
+      document.body.classList.remove('modal-open');
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    };
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      const triggers = card.querySelectorAll('.project-thumb, .project-link');
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => openModal(card));
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !modal.hidden) {
+        closeModal();
+      }
     });
   }
 

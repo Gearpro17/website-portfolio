@@ -109,23 +109,6 @@ button{ font: inherit; cursor: pointer; }
   gap: 14px;
 }
 
-.theme-toggle{
-  background: none;
-  border: none;
-  color: var(--text-dark-bg-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  border-radius: var(--radius-s);
-  transition: color 0.15s ease, background 0.15s ease;
-}
-
-.theme-toggle:hover{
-  color: var(--text-dark-bg);
-  background: var(--bg-dark-2);
-}
-
 .nav-toggle{
   display: none;
   flex-direction: column;
@@ -312,6 +295,7 @@ button{ font: inherit; cursor: pointer; }
 .project-thumb{
   aspect-ratio: 16 / 11;
   background: linear-gradient(150deg, #17222b, #0a1015);
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -324,6 +308,7 @@ button{ font: inherit; cursor: pointer; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
 }
 
 .project-body{
@@ -386,6 +371,134 @@ button{ font: inherit; cursor: pointer; }
   border-radius: 50%;
   background: var(--accent);
 }
+
+/* ---------------------------------------
+   Project modal
+--------------------------------------- */
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 10, 14, 0.75);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+  display: none;
+}
+ 
+.modal-overlay.is-open{
+  display: flex;
+}
+ 
+.modal{
+  background: var(--surface);
+  color: var(--text-light-bg);
+  width: 100%;
+  max-width: 640px;
+  max-height: min(88vh, 720px);
+  border-radius: var(--radius-m);
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+}
+ 
+.modal-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  color: var(--text-light-bg);
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+ 
+.modal-close:hover{
+  background: var(--bg-light);
+}
+ 
+.modal-media{
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(150deg, #17222b, #0a1015);
+  overflow: hidden;
+}
+ 
+.modal-media img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+.modal-body{
+  padding: 28px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.modal-category{
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+ 
+.modal-title{
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+ 
+.modal-desc{
+  color: var(--text-light-bg-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin-top: 2px;
+}
+ 
+.modal-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 4px 0 10px;
+}
+ 
+.modal-tags li{
+  font-size: 0.8rem;
+  color: var(--text-light-bg-muted);
+  position: relative;
+  padding-left: 16px;
+}
+ 
+.modal-tags li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+ 
+.modal-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.is-hidden{
+  display: none !important;
+}
+
 
 /* ---------------------------------------
    About 
@@ -663,6 +776,21 @@ button{ font: inherit; cursor: pointer; }
   .hero-actions{ flex-direction: column; align-items: flex-start; }
   .btn{ width: 100%; justify-content: center; }
   .section-heading{ flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+body.modal-open{
+  overflow: hidden;
+}
+
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 10, 14, 0.75);
+  z-index: 1000;
+  display: none;      /* hidden by default */
+}
+.modal-overlay.is-open{
+  display: flex;       /* shown when open */
 }
 
 /* ---------------------------------------
