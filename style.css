@@ -43,6 +43,81 @@ button{ font: inherit; cursor: pointer; }
   padding: 0 32px;
 }
 
+.back-to-top {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0b1418;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+
+    color: #35d39b;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    
+    z-index: 1000;
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition: transform 0.25s ease;
+}
+
+/* Visible state */
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Hover */
+.back-to-top:hover {
+    background: #10231f;
+    border-color: #35d39b;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-3px);
+}
+
+/* Click feedback */
+.back-to-top:active {
+    transform: translateY(1px);
+}
+
+/* Keyboard accessibility */
+.back-to-top:focus-visible {
+    outline: 2px solid #35d39b;
+    outline-offset: 3px;
+}
+
+
 /* ---------------------------------------
    Header
 --------------------------------------- */
@@ -776,6 +851,14 @@ button{ font: inherit; cursor: pointer; }
   .hero-actions{ flex-direction: column; align-items: flex-start; }
   .btn{ width: 100%; justify-content: center; }
   .section-heading{ flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  .back-to-top {
+        right: 20px;
+        bottom: 20px;
+
+        width: 44px;
+        height: 44px;
+    }
 }
 
 body.modal-open{
