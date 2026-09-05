@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Joele Cossu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html#home" class="logo">
+      <span class="logo-mark">JC</span>
+      <span class="logo-name">Joele Cossu</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link is-active">Projects</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#skills" class="nav-link">Skills</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19V5M6 11l6-6 6 6"/>
+    </svg>
+  </button>
+
+  <section class="projects projects-page">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>All projects</h2>
+        <a href="index.html#home" class="link-arrow">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M19 12H5M11 6l-6 6 6 6"/>
+          </svg>
+          Back home
+        </a>
+      </div>
+
+      <div class="project-grid">
+
+        <!--
+          To add a new project: duplicate one <article class="project-card">...</article>
+          block below, then update:
+          - data-github (link to the repo) OR data-zip (path to a downloadable .zip)
+          - the thumbnail image / placeholder text
+          - project-category, project-title, project-desc
+          - project-tags (the tech stack pills)
+          - project-desc-full (the longer text shown inside the modal)
+        -->
+
+        <article class="project-card" data-github="https://github.com/Gearpro17/smart-inventory-system">
+          <button type="button" class="project-thumb" aria-label="View details for Smart Inventory System">
+            <img src="assets/inventory_management_concept_art.png" alt="Screenshot of the Smart Inventory System dashboard" />
+          </button>
+          <div class="project-body">
+            <div class="project-top">
+              <p class="project-category">Web application</p>
+              <button type="button" class="project-link" aria-label="View details for Smart Inventory System">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </button>
+            </div>
+            <h3 class="project-title">Smart Inventory System</h3>
+            <p class="project-desc">Full stack web application for inventory management with real-time tracking, analytics and reports.</p>
+            <ul class="project-tags">
+              <li>Spring Boot</li>
+              <li>Angular</li>
+              <li>MySQL</li>
+            </ul>
+            <p class="project-desc-full" hidden>
+              Full stack web application built to help small warehouses manage stock levels without spreadsheets. 
+              The Angular front end gives staff a live view of inventory across multiple locations,
+              with low-stock alerts, category filtering and CSV exports. 
+              The Spring Boot backend exposes a REST API secured with JWT authentication, 
+              and MySQL stores stock movements so managers can generate historical reports and spot trends in demand over time.</p>
+          </div>
+        </article>
+
+        <article class="project-card" data-zip="assets/multi_state_control_project.zip">
+          <button type="button" class="project-thumb" aria-label="Screenshot of the state control simulation">
+            <img src="assets/Multiple_state_control.png" alt="Screenshot of the state control simulation" />
+          </button>
+          <div class="project-body">
+            <div class="project-top">
+              <p class="project-category">CODESYS Simulation</p>
+              <button type="button" class="project-link" aria-label="View details for State Control Simulation">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </button>
+            </div>
+            <h3 class="project-title">State Control Simulation</h3>
+            <p class="project-desc">Simulation of a process control system for a machine that goes through different states.</p>
+            <ul class="project-tags">
+              <li>CODESYS</li>
+              <li>PLC Programming</li>
+              <li>Automation</li>
+            </ul>
+            <p class="project-desc-full" hidden>
+              In this project I try to simulate a process control system for a machine that goes through different states.
+              I integrated a manual, automatic and home modes, as well as a start and stop function, as the default operation modes.
+              More can be added to the system, such as a reset function, a maintenance mode, and a fault detection system. The simulation is built in CODESYS using Structured Text (ST) 
+              and Sequential Function Chart (SFC) programming languages. It serves as a demonstrtation of a real-world industrial control system, and can be used to test and validate the control logic 
+              before deploying it to a physical machine.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card" data-zip="assets/conveyor_belt_with_sorting.zip">
+          <button type="button" class="project-thumb" aria-label="Conveyor Belt Simulation">
+            <img src="assets/conveyor_belt.png" alt="Screenshot of the conveyor belt simulation" />
+          </button>
+          <div class="project-body">
+            <div class="project-top">
+              <p class="project-category">Robotics & Automation</p>
+              <button type="button" class="project-link" aria-label="View details for Conveyor Belt Simulation">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </button>
+            </div>
+            <h3 class="project-title">Conveyor Belt Simulation</h3>
+            <p class="project-desc">Simulation of a conveyor belt system with automated sorting and handling capabilities.</p>
+            <ul class="project-tags">
+              <li>CODESYS</li>
+              <li>PLC Programming</li>
+              <li>Automation</li>
+            </ul>
+            <p class="project-desc-full" hidden>Simulation of a conveyor belt system with automated sorting and handling capabilities.
+              I designed and implemented a control system that can detect and sort objects based on their size, shape, and color.
+              It was programmed primarily in CODESYS using Structured Text (ST).
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card" >
+          <button type="button" class="project-thumb" aria-label="empty project thumbnail">
+            <span class="project-thumb-placeholder">Coming Soon</span>
+          </button>
+          <div class="project-body">
+            <div class="project-top">
+              <p class="project-category">Web application</p>
+              <button type="button" class="project-link" aria-label="View details for Smart Inventory System">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </button>
+            </div>
+            <h3 class="project-title">Coming Soon</h3>
+            <p class="project-desc">This is a description</p>
+            <ul class="project-tags">
+              <li>Spring Boot</li>
+              <li>Angular</li>
+              <li>MySQL</li>
+            </ul>
+            <p class="project-desc-full" hidden>
+              Coming soon!</p>
+          </div>
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="project-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-body">
+        <p class="modal-category" id="modal-category"></p>
+        <h3 class="modal-title" id="modal-title"></h3>
+        <p class="modal-desc" id="modal-desc"></p>
+        <ul class="modal-tags" id="modal-tags"></ul>
+        <div class="modal-actions">
+          <a class="btn btn-primary modal-github" id="modal-github" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 19 19 5M9 5h10v10"/></svg>
+          </a>
+          <a class="btn btn-outline-light modal-download" id="modal-zip" download>
+            Download ZIP
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <p>&copy; <span id="year"></span> Joele Cossu. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
