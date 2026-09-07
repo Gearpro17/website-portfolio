@@ -387,6 +387,7 @@ button{ font: inherit; cursor: pointer; }
   border: 0;
   padding: 0;
   cursor: pointer;
+  position: relative;
 }
  
 .project-thumb img{
@@ -399,6 +400,56 @@ button{ font: inherit; cursor: pointer; }
  
 .project-thumb:hover img{
   transform: scale(1.04);
+}
+ 
+.status-badge{
+  --status-color: #f5a524;
+  --status-color-text: #2b1400;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--status-color-text);
+  background: var(--status-color);
+  padding: 5px 12px;
+  border-radius: 999px;
+  line-height: 1;
+}
+ 
+.status-badge::before{
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+ 
+.project-thumb .status-badge{
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+}
+ 
+.project-card[data-status="wip"] .status-badge{
+  display: inline-flex;
+}
+ 
+.status-badge.is-visible{
+  display: inline-flex;
+}
+ 
+.project-card[data-status="wip"] .project-thumb img{
+  filter: saturate(0.7) brightness(0.8);
+}
+ 
+.modal-heading{
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
  
 .project-body{
@@ -470,7 +521,7 @@ button{ font: inherit; cursor: pointer; }
   border-radius: 50%;
   background: var(--accent);
 }
-
+ 
 /* ---------------------------------------
    Project modal
 --------------------------------------- */
@@ -593,7 +644,7 @@ button{ font: inherit; cursor: pointer; }
   gap: 12px;
   margin-top: 8px;
 }
-
+ 
 .is-hidden{
   display: none !important;
 }

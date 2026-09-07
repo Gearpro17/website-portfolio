@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joele Cossu — Mechatronics Engineer</title>
+<meta name="description" content="Portfolio of Joele Cossu, a Mechatronics Engineer building solutions that connect hardware and software through automation, robotics and code.">
+<meta name="theme-color" content="#0a0f14">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Joele Cossu — Mechatronics Engineer">
+<meta property="og:description" content="Building solutions that connect hardware and software. Projects in industrial automation, robotics and full-stack development.">
+<meta property="og:image" content="assets/profile_photo.jpg">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -100,9 +110,10 @@
 
       <div class="project-grid">
 
-        <article class="project-card" data-github="https://github.com/Gearpro17/smart-inventory-system">
+        <article class="project-card" data-github="https://github.com/Gearpro17/smart-inventory-system" data-status="wip">
           <button type="button" class="project-thumb" aria-label="View details for Smart Inventory System">
-            <img src="assets/inventory_management_concept_art.png" alt="Screenshot of the Smart Inventory System dashboard" />
+            <span class="status-badge">In progress</span>
+            <img src="assets/inventory_management_concept_art.png" alt="Screenshot of the Smart Inventory System dashboard" loading="lazy" decoding="async"/>
           </button>
           <div class="project-body">
             <div class="project-top">
@@ -127,9 +138,10 @@
           </div>
         </article>
 
-        <article class="project-card" data-zip="assets/multi_state_control_project.zip">
+        <article class="project-card" data-zip="assets/multi_state_control_project.zip" data-status="wip">
           <button type="button" class="project-thumb" aria-label="Screenshot of the state control simulation">
-            <img src="assets/Multiple_state_control.png" alt="Screenshot of the state control simulation" />
+            <span class="status-badge">In progress</span>
+            <img src="assets/Multiple_state_control.png" alt="Screenshot of the state control simulation" loading="lazy" decoding="async"/>
           </button>
           <div class="project-body">
             <div class="project-top">
@@ -155,9 +167,10 @@
           </div>
         </article>
 
-        <article class="project-card" data-zip="assets/conveyor_belt_with_sorting.zip">
+        <article class="project-card" data-zip="assets/conveyor_belt_with_sorting.zip" data-status="wip">
           <button type="button" class="project-thumb" aria-label="Conveyor Belt Simulation">
-            <img src="assets/conveyor_belt.png" alt="Screenshot of the conveyor belt simulation" />
+            <span class="status-badge">In progress</span>
+            <img src="assets/conveyor_belt.png" alt="Screenshot of the conveyor belt simulation" loading="lazy" decoding="async"/>
           </button>
           <div class="project-body">
             <div class="project-top">
@@ -191,23 +204,27 @@
       </button>
       <div class="modal-media" id="modal-media"></div>
       <div class="modal-body">
-        <p class="modal-category" id="modal-category"></p>
+        <div class="modal-heading">
+          <p class="modal-category" id="modal-category"></p>
+          <span class="status-badge" id="modal-status">In progress</span>
+        </div>
         <h3 class="modal-title" id="modal-title"></h3>
         <p class="modal-desc" id="modal-desc"></p>
         <ul class="modal-tags" id="modal-tags"></ul>
         <div class="modal-actions">
-            <a class="btn btn-primary modal-download" id="modal-zip" download>
-              Download Project
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
-            </a>
-            <a class="btn btn-primary modal-github" id="modal-github" target="_blank" rel="noopener">
-              View on GitHub
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 19 19 5M9 5h10v10"/></svg>
-            </a>
+          <a class="btn btn-primary modal-github" id="modal-github" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 19 19 5M9 5h10v10"/></svg>
+          </a>
+          <a class="btn btn-outline-light modal-download" id="modal-zip" download>
+            Download ZIP
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </div>
+
 
 
   <section class="about" id="about">
