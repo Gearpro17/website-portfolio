@@ -53,16 +53,6 @@
 
       <div class="project-grid">
 
-        <!--
-          To add a new project: duplicate one <article class="project-card">...</article>
-          block below, then update:
-          - data-github (link to the repo) OR data-zip (path to a downloadable .zip)
-          - the thumbnail image / placeholder text
-          - project-category, project-title, project-desc
-          - project-tags (the tech stack pills)
-          - project-desc-full (the longer text shown inside the modal)
-        -->
-
         <article class="project-card" data-github="https://github.com/Gearpro17/smart-inventory-system" data-status="wip">
           <button type="button" class="project-thumb" aria-label="View details for Smart Inventory System">
             <span class="status-badge">In progress</span>
@@ -127,7 +117,7 @@
           </button>
           <div class="project-body">
             <div class="project-top">
-              <p class="project-category">Robotics & Automation</p>
+              <p class="project-category">CODESYS Simulation</p>
               <button type="button" class="project-link" aria-label="View details for Conveyor Belt Simulation">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </button>
@@ -152,17 +142,19 @@
           </button>
           <div class="project-body">
             <div class="project-top">
-              <p class="project-category">Web application</p>
+              <p class="project-category">Robotics</p>
               <button type="button" class="project-link" aria-label="View details for Smart Inventory System">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </button>
             </div>
-            <h3 class="project-title">Coming Soon</h3>
-            <p class="project-desc">This is a description</p>
+            <h3 class="project-title">Robotics Simulation using ROS2</h3>
+            <p class="project-desc">This will be a robotics project.</p>
             <ul class="project-tags">
-              <li>Spring Boot</li>
-              <li>Angular</li>
-              <li>MySQL</li>
+              <li>AWS EC2</li>
+              <li>ROS2</li>
+              <li>Docker</li>
+              <li>Linux</li>
+              <li>C++</li>
             </ul>
             <p class="project-desc-full" hidden>
               Coming soon!</p>
@@ -174,14 +166,17 @@
     </div>
   </section>
 
-  <div class="modal-overlay" id="project-modal" hidden>
+    <div class="modal-overlay" id="project-modal" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button type="button" class="modal-close" id="modal-close" aria-label="Close">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg>
       </button>
       <div class="modal-media" id="modal-media"></div>
       <div class="modal-body">
-        <p class="modal-category" id="modal-category"></p>
+        <div class="modal-heading">
+          <p class="modal-category" id="modal-category"></p>
+          <span class="status-badge" id="modal-status">In progress</span>
+        </div>
         <h3 class="modal-title" id="modal-title"></h3>
         <p class="modal-desc" id="modal-desc"></p>
         <ul class="modal-tags" id="modal-tags"></ul>
@@ -190,7 +185,7 @@
             View on GitHub
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 19 19 5M9 5h10v10"/></svg>
           </a>
-          <a class="btn btn-outline-light modal-download" id="modal-zip" download>
+          <a class="btn btn-primary modal-download" id="modal-zip" download>
             Download ZIP
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
           </a>
@@ -198,6 +193,7 @@
       </div>
     </div>
   </div>
+
 
 </main>
 
