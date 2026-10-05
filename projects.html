@@ -81,30 +81,35 @@
           </div>
         </article>
 
-        <article class="project-card" data-zip="assets/multi_state_control_project.zip" data-status="wip">
-          <button type="button" class="project-thumb" aria-label="Screenshot of the state control simulation">
+        <article class="project-card" data-github="https://github.com/Gearpro17/codesys-industrial-machine-simulation" data-status="wip">
+          <button type="button" class="project-thumb" aria-label="Screenshot of the industrial control system simulation">
             <span class="status-badge">In progress</span>
-            <img src="assets/Multiple_state_control.png" alt="Screenshot of the state control simulation" loading="lazy" decoding="async" />
+            <img src="assets/process_flow_concept_img.png" alt="Screenshot of the industrial control system simulation" loading="lazy" decoding="async" />
           </button>
           <div class="project-body">
             <div class="project-top">
-              <p class="project-category">CODESYS Simulation</p>
-              <button type="button" class="project-link" aria-label="View details for State Control Simulation">
+              <p class="project-category">Automation</p>
+              <button type="button" class="project-link" aria-label="View details for Industrial Control System Simulation">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </button>
             </div>
-            <h3 class="project-title">State Control Simulation</h3>
-            <p class="project-desc">Simulation of a process control system for a machine that goes through different states.</p>
+            <h3 class="project-title">Industrial Control System Simulation</h3>
+            <p class="project-desc">Simulation of a full control system with plc, gui, communication protocols and PID controllers.</p>
             <ul class="project-tags">
               <li>CODESYS</li>
               <li>PLC Programming</li>
               <li>Automation</li>
+              <li>C++</li>
+              <li>Modbus</li>
+              <li>SQL</li>
+              <li>PID Controllers</li>
             </ul>
             <p class="project-desc-full" hidden>
-              In this project I try to simulate a process control system for a machine that goes through different states.
-              I integrated a manual, automatic and home modes, as well as a start and stop function, as the default operation modes.
-              More can be added to the system, such as a reset function, a maintenance mode, and a fault detection system. The simulation is built in CODESYS using Structured Text (ST) 
-              and Sequential Function Chart (SFC) programming languages. It serves as a demonstrtation of a real-world industrial control system, and can be used to test and validate the control logic 
+              In this project I simulate a full control system, with PLC logic, communication protocols, GUI, data storage, analytics and PID controllers.
+              The control system and analytics are developed with C++ and uses the Modbus protocol to exchange data between industrial devices, 
+              while the control flow is structured with ladder logic and structured text for sequential automation.
+              SQL is used to store process data and historical events, allowing analysis and monitoring of machine behaviour before deployment to a physical installation.
+              It serves as a demonstrtation of a real-world industrial control system, and can be used to test and validate the complete control logic 
               before deploying it to a physical machine.
             </p>
           </div>
