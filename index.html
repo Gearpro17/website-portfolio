@@ -29,6 +29,7 @@
       <a href="#home" class="nav-link is-active">Home</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#about" class="nav-link">About</a>
+      <a href="#certifications" class="nav-link">Certificates</a>
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
@@ -75,6 +76,8 @@
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
               <path d="M6.94 8.5H3.56V20.5H6.94V8.5ZM5.25 3.5A1.96 1.96 0 1 0 5.25 7.42 1.96 1.96 0 0 0 5.25 3.5ZM20.5 20.5H17.13V14.4C17.13 12.93 16.6 11.93 15.28 11.93C14.28 11.93 13.68 12.6 13.42 13.25C13.32 13.5 13.3 13.84 13.3 14.18V20.5H9.93S9.97 9.47 9.93 8.5H13.3V9.95C13.75 9.25 14.55 8.25 16.58 8.25C19.1 8.25 20.5 9.9 20.5 13.45V20.5Z"/></svg>
           </a>
+          <a href="https://leetcode.com/u/Gearpro17/" class="social-link" aria-label="LeetCode" target="_blank" rel="noopener"><img src="assets/leetcode-icon.png" alt=""></a>
+          <a href="https://www.kaggle.com/joelecossu" class="social-link" aria-label="Kaggle" target="_blank" rel="noopener"><img src="assets/kaggle-icon.png" alt=""></a>
           <a href="mailto:gear@joesautomation.co.site" class="social-link" aria-label="Email">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="5" width="18" height="14" rx="2"/>
@@ -110,9 +113,10 @@
 
       <div class="project-grid">
 
-        <article class="project-card" data-github="https://github.com/Gearpro17/smart-inventory-system" data-status="wip">
+        <article class="project-card" data-github="https://github.com/Gearpro17/smart-inventory-system" data-video="assets/inventory-app-demo.mp4" data-status="wip">
           <button type="button" class="project-thumb" aria-label="View details for Smart Inventory System">
             <span class="status-badge">In progress</span>
+            <span class="demo-play">▶ Watch demo</span>
             <img src="assets/inventory_management_concept_art.png" alt="Screenshot of the Smart Inventory System dashboard" loading="lazy" decoding="async"/>
           </button>
           <div class="project-body">
@@ -202,6 +206,8 @@
     </div>
   </section>
 
+
+
   <div class="modal-overlay" id="project-modal" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button type="button" class="modal-close" id="modal-close" aria-label="Close">
@@ -227,6 +233,19 @@
           </a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay certificate-modal-overlay" id="certificate-modal" hidden>
+    <div class="modal certificate-modal" role="dialog" aria-modal="true" aria-labelledby="certificate-modal-title">
+      <button type="button" class="modal-close" id="certificate-modal-close" aria-label="Close certificate preview">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="certificate-modal-heading">
+        <h3 id="certificate-modal-title"></h3>
+        <a class="btn btn-primary certificate-verify" id="certificate-verify" target="_blank" rel="noopener" hidden>Verify on Credly ↗</a>
+      </div>
+      <div class="certificate-modal-content" id="certificate-modal-content"></div>
     </div>
   </div>
 
@@ -286,6 +305,70 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section class="certifications" id="certifications">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Certifications &amp; courses</h2>
+      </div>
+      <a class="featured-certification" href="https://www.credly.com/badges/8dc01f42-c1ed-458a-94bf-c0d05177c279/linked_in_profile" target="_blank" rel="noopener" aria-label="Verify AWS Well-Architected Proficient badge on Credly">
+        <span class="featured-certification-badge">
+          <img src="assets/aws-well-architected-proficient.png" alt="AWS Well-Architected Proficient badge">
+        </span>
+        <span class="featured-certification-copy">
+          <small>Featured credential</small>
+          <strong>AWS Well-Architected Proficient</strong>
+          <span>View verified badge on Credly ↗</span>
+        </span>
+      </a>
+      <h3 class="certificate-group-title">Professional certifications &amp; courses</h3>
+      <div class="certificate-grid">
+        <button type="button" class="certificate-card" data-cert-preview="assets/six-sigma-yellow-belt.jpeg" data-cert-title="Six Sigma Yellow Belt">
+          <img src="assets/six-sigma-yellow-belt.jpeg" alt="Six Sigma Yellow Belt Professional Certification" loading="lazy" decoding="async">
+          <span>Six Sigma Yellow Belt</span>
+          <small>Professional certification · March 2024</small>
+        </button>
+        <button type="button" class="certificate-card" data-cert-preview="assets/scrum-fundamentals-certified.jpeg" data-cert-title="Scrum Fundamentals Certified">
+          <img src="assets/scrum-fundamentals-certified.jpeg" alt="Scrum Fundamentals Certified certificate" loading="lazy" decoding="async">
+          <span>Scrum Fundamentals Certified</span>
+          <small>SFC · November 2023</small>
+        </button>
+        <button type="button" class="certificate-card certificate-document" data-cert-preview="assets/curso-plc-lasalle.pdf" data-cert-title="PLC Course — La Salle">
+          <span class="document-mark" aria-hidden="true">PDF</span>
+          <span>PLC Course — La Salle</span>
+          <small>Course completion certificate · View PDF ↗</small>
+        </button>
+        <button type="button" class="certificate-card certificate-document" data-cert-preview="assets/diploma-ai-data-morelos.pdf" data-cert-title="AI &amp; Data — Morelos">
+          <span class="document-mark" aria-hidden="true">PDF</span>
+          <span>AI &amp; Data — Morelos</span>
+          <small>Course diploma · View PDF ↗</small>
+        </button>
+      </div>
+      <h3 class="certificate-group-title">Kaggle courses</h3>
+      <div class="certificate-grid">
+        <button type="button" class="certificate-card" data-cert-preview="assets/kaggle-python.png" data-cert-title="Python">
+          <img src="assets/kaggle-python.png" alt="Kaggle Python course certificate" loading="lazy" decoding="async">
+          <span>Python</span><small>Kaggle · October 2026</small>
+        </button>
+        <button type="button" class="certificate-card" data-cert-preview="assets/kaggle-pandas.png" data-cert-title="Pandas">
+          <img src="assets/kaggle-pandas.png" alt="Kaggle Pandas course certificate" loading="lazy" decoding="async">
+          <span>Pandas</span><small>Kaggle · April 2024</small>
+        </button>
+        <button type="button" class="certificate-card" data-cert-preview="assets/kaggle-data-visualization.png" data-cert-title="Data Visualization">
+          <img src="assets/kaggle-data-visualization.png" alt="Kaggle Data Visualization course certificate" loading="lazy" decoding="async">
+          <span>Data Visualization</span><small>Kaggle · April 2024</small>
+        </button>
+        <button type="button" class="certificate-card" data-cert-preview="assets/kaggle-intro-to-machine-learning.png" data-cert-title="Intro to Machine Learning">
+          <img src="assets/kaggle-intro-to-machine-learning.png" alt="Kaggle Intro to Machine Learning course certificate" loading="lazy" decoding="async">
+          <span>Intro to Machine Learning</span><small>Kaggle · February 2024</small>
+        </button>
+        <button type="button" class="certificate-card" data-cert-preview="assets/kaggle-intermediate-machine-learning.png" data-cert-title="Intermediate Machine Learning">
+          <img src="assets/kaggle-intermediate-machine-learning.png" alt="Kaggle Intermediate Machine Learning course certificate" loading="lazy" decoding="async">
+          <span>Intermediate Machine Learning</span><small>Kaggle · April 2024</small>
+        </button>
+      </div>
     </div>
   </section>
 
