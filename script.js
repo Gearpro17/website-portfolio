@@ -77,13 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       modalMedia.innerHTML = '';
 
-      if (thumbImg) {
+      if (!card.dataset.video && thumbImg) {
         const img = document.createElement('img');
         img.src = thumbImg.src;
         img.alt = title ? title.textContent : '';
         modalMedia.appendChild(img);
         modalMedia.hidden = false;
-      } else {
+      } else if (!card.dataset.video) {
         modalMedia.hidden = true;
       }
 
@@ -101,6 +101,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const githubUrl = card.dataset.github;
       const zipUrl = card.dataset.zip;
+      const videoUrl = card.dataset.video;
+
+      if (videoUrl) {
+        const video = document.createElement('video');
+        video.src = videoUrl;
+        video.controls = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        video.setAttribute('aria-label', `${title ? title.textContent : 'Project'} demo video`);
+        modalMedia.appendChild(video);
+        modalMedia.hidden = false;
+      }
 
       if (githubUrl) {
         modalGithub.href = githubUrl;
@@ -153,6 +165,70 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.key === 'Escape' && !modal.hidden) {
         closeModal();
       }
+    });
+  }
+
+  // Certificate preview modal
+  const certificateModal = document.getElementById('certificate-modal');
+  if (certificateModal) {
+    const certificateTitle = document.getElementById('certificate-modal-title');
+    const certificateContent = document.getElementById('certificate-modal-content');
+    const certificateClose = document.getElementById('certificate-modal-close');
+    const certificateVerify = document.getElementById('certificate-verify');
+    let certificateTrigger = null;
+
+    const closeCertificateModal = () => {
+      certificateModal.hidden = true;
+      certificateModal.classList.remove('is-open');
+      document.body.classList.remove('modal-open');
+      certificateContent.innerHTML = '';
+      if (certificateTrigger) certificateTrigger.focus();
+    };
+
+    document.querySelectorAll('[data-cert-preview]').forEach(card => {
+      card.addEventListener('click', () => {
+        certificateTrigger = card;
+        const source = card.dataset.certPreview;
+        const title = card.dataset.certTitle || 'Certificate';
+        const isPdf = source.toLowerCase().endsWith('.pdf');
+        certificateTitle.textContent = title;
+        certificateContent.innerHTML = '';
+
+        if (isPdf) {
+          const frame = document.createElement('iframe');
+          frame.src = source;
+          frame.title = `${title} certificate PDF`;
+          certificateContent.appendChild(frame);
+          certificateContent.classList.add('is-pdf');
+        } else {
+          const image = document.createElement('img');
+          image.src = source;
+          image.alt = `${title} certificate`;
+          certificateContent.appendChild(image);
+          certificateContent.classList.remove('is-pdf');
+        }
+
+        if (card.dataset.certVerify) {
+          certificateVerify.href = card.dataset.certVerify;
+          certificateVerify.hidden = false;
+        } else {
+          certificateVerify.hidden = true;
+          certificateVerify.removeAttribute('href');
+        }
+
+        certificateModal.hidden = false;
+        certificateModal.classList.add('is-open');
+        document.body.classList.add('modal-open');
+        certificateClose.focus();
+      });
+    });
+
+    certificateClose.addEventListener('click', closeCertificateModal);
+    certificateModal.addEventListener('click', event => {
+      if (event.target === certificateModal) closeCertificateModal();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !certificateModal.hidden) closeCertificateModal();
     });
   }
 
